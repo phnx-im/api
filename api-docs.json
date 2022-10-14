@@ -1,1 +1,1202 @@
-{"openapi":"3.0.3","info":{"title":"phnxserver","description":"","contact":{"name":"","email":""},"license":{"name":""},"version":"0.1.0"},"paths":{"/health_check":{"get":{"tags":["crate"],"summary":"A simple health check endpoint.","description":"A simple health check endpoint.\n","operationId":"health_check","responses":{"200":{"description":"The server is healthy."}},"deprecated":false}}}}
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "phnxserver",
+    "description": "",
+    "contact": {
+      "name": "",
+      "email": ""
+    },
+    "license": {
+      "name": ""
+    },
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/health_check": {
+      "get": {
+        "tags": [
+          "crate"
+        ],
+        "summary": "A simple health check endpoint.",
+        "description": "A simple health check endpoint.\n",
+        "operationId": "health_check",
+        "responses": {
+          "200": {
+            "description": "The server is healthy."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_DS_ADD_CLIENTS}": {
+      "post": {
+        "tags": [
+          "DS"
+        ],
+        "summary": "DS endpoint to add clients to a group.",
+        "description": "DS endpoint to add clients to a group.\n",
+        "operationId": "ds_add_clients",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddClientsParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Added client."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_DS_ADD_USERS}": {
+      "post": {
+        "tags": [
+          "DS"
+        ],
+        "summary": "DS endpoint to add users to a group.",
+        "description": "DS endpoint to add users to a group.\n",
+        "operationId": "ds_add_users",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddUsersParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Added users to a group."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_DS_CREATE_GROUP}": {
+      "post": {
+        "tags": [
+          "DS"
+        ],
+        "summary": "DS endpoint for group creation.",
+        "description": "DS endpoint for group creation.\n",
+        "operationId": "ds_create_group",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateGroupParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Group created successfully."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_DS_DELETE_GROUP}": {
+      "post": {
+        "tags": [
+          "DS"
+        ],
+        "summary": "DS endpoint to delete group.",
+        "description": "DS endpoint to delete group.\n",
+        "operationId": "ds_delete_group",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteGroupParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Group deleted."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_DS_EXTERNAL_COMMIT_INFO}": {
+      "post": {
+        "tags": [
+          "DS"
+        ],
+        "summary": "DS endpoint to retrieve External Commit information.",
+        "description": "DS endpoint to retrieve External Commit information.\n",
+        "operationId": "ds_external_commit_info",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExternalCommitInfoParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Retrieved external commit info."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_DS_JOIN_CONNECTION_GROUP}": {
+      "post": {
+        "tags": [
+          "DS"
+        ],
+        "summary": "DS endpoint to join a connection group.",
+        "description": "DS endpoint to join a connection group.\n",
+        "operationId": "ds_join_connection_group",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JoinConnectionGroupParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Joined connection group."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_DS_JOIN_GROUP}": {
+      "post": {
+        "tags": [
+          "DS"
+        ],
+        "summary": "DS endpoint to join a group.",
+        "description": "DS endpoint to join a group.\n",
+        "operationId": "ds_join_group",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JoinGroupParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Joined group."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_DS_REMOVE_CLIENTS}": {
+      "post": {
+        "tags": [
+          "DS"
+        ],
+        "summary": "DS endpoint to remove clients.",
+        "description": "DS endpoint to remove clients.\n",
+        "operationId": "ds_remove_clients",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveClientsParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Removed client from group."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_DS_REMOVE_USERS}": {
+      "post": {
+        "tags": [
+          "DS"
+        ],
+        "summary": "DS emdpoint to remove users from a group.",
+        "description": "DS emdpoint to remove users from a group.\n",
+        "operationId": "ds_remove_users",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveUsersParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Removed users from a group."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_DS_RESYNC_CLIENT}": {
+      "post": {
+        "tags": [
+          "DS"
+        ],
+        "summary": "DS endpoint to resync a client.",
+        "description": "DS endpoint to resync a client.\n",
+        "operationId": "ds_resync_client",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResyncClientParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Resynced client."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_DS_SELF_REMOVE_CLIENT}": {
+      "post": {
+        "tags": [
+          "DS"
+        ],
+        "summary": "DS endpoint to self remove client.",
+        "description": "DS endpoint to self remove client.\n",
+        "operationId": "ds_self_remove_client",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SelfRemoveClientParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Client self removed."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_DS_SELF_REMOVE_USER}": {
+      "post": {
+        "tags": [
+          "DS"
+        ],
+        "summary": "DS endpoint to self remove user.",
+        "description": "DS endpoint to self remove user.\n",
+        "operationId": "ds_self_remove_user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SelfRemoveUserParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "User self removed."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_DS_SEND_MESSAGE}": {
+      "post": {
+        "tags": [
+          "DS"
+        ],
+        "summary": "DS endpoint to send message.",
+        "description": "DS endpoint to send message.\n",
+        "operationId": "ds_send_message",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendMessageParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Message sent."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_DS_UPDATE_QUEUE_INFO}": {
+      "post": {
+        "tags": [
+          "DS"
+        ],
+        "summary": "DS endpoint for updating queue information.",
+        "description": "DS endpoint for updating queue information.\n",
+        "operationId": "ds_update_queue_info",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateQueueInfoParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Queue info udpated successfully."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_DS_WELCOME_INFO}": {
+      "post": {
+        "tags": [
+          "DS"
+        ],
+        "summary": "DS endpoint for retrieving the public ratchet tree and the credential",
+        "description": "DS endpoint for retrieving the public ratchet tree and the credential\nchains.\n",
+        "operationId": "ds_welcome_info",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WelcomeInfoParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Retrieved welcome info."
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddClientsParams": {
+        "type": "object",
+        "required": [
+          "commit",
+          "ear_key",
+          "group_info_update",
+          "welcome",
+          "welcome_attribution_info"
+        ],
+        "properties": {
+          "commit": {
+            "$ref": "#/components/schemas/MlsMessage"
+          },
+          "ear_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          },
+          "group_info_update": {
+            "$ref": "#/components/schemas/GroupInfoUpdate"
+          },
+          "welcome": {
+            "$ref": "#/components/schemas/Welcome"
+          },
+          "welcome_attribution_info": {
+            "$ref": "#/components/schemas/WelcomeAttributionInfo"
+          }
+        }
+      },
+      "AddUsersParams": {
+        "type": "object",
+        "required": [
+          "commit",
+          "ear_key",
+          "group_info_update",
+          "welcome",
+          "welcome_attribution_info",
+          "key_package_batches"
+        ],
+        "properties": {
+          "commit": {
+            "$ref": "#/components/schemas/MlsMessage"
+          },
+          "ear_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          },
+          "group_info_update": {
+            "$ref": "#/components/schemas/GroupInfoUpdate"
+          },
+          "key_package_batches": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KeyPackageBatch"
+            }
+          },
+          "welcome": {
+            "$ref": "#/components/schemas/Welcome"
+          },
+          "welcome_attribution_info": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WelcomeAttributionInfo"
+            }
+          }
+        }
+      },
+      "Ciphertext": {
+        "type": "object",
+        "required": [
+          "ciphertext",
+          "nonce"
+        ],
+        "properties": {
+          "ciphertext": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "nonce": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "ClientId": {
+        "type": "object"
+      },
+      "ClientQueueConfig": {
+        "type": "object",
+        "required": [
+          "client_homeserver_domain",
+          "sealed_config"
+        ],
+        "properties": {
+          "client_homeserver_domain": {
+            "$ref": "#/components/schemas/Fqdn"
+          },
+          "sealed_config": {
+            "$ref": "#/components/schemas/SealedQueueConfig"
+          }
+        }
+      },
+      "CreateGroupParams": {
+        "type": "object",
+        "required": [
+          "key_package",
+          "encrypted_credential_chain",
+          "creator_queue_config",
+          "creator_user_auth_key",
+          "initial_ear_key"
+        ],
+        "properties": {
+          "creator_queue_config": {
+            "$ref": "#/components/schemas/ClientQueueConfig"
+          },
+          "creator_user_auth_key": {
+            "$ref": "#/components/schemas/UserAuthKey"
+          },
+          "encrypted_credential_chain": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "initial_ear_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          },
+          "key_package": {
+            "$ref": "#/components/schemas/KeyPackage"
+          }
+        }
+      },
+      "DeleteAuthKeyEarKey": {
+        "type": "object",
+        "description": "EAR key for the [`QueueDeletionAuthKey`].",
+        "required": [
+          "key"
+        ],
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/DeleteAuthKeyEarKeySecret"
+          }
+        }
+      },
+      "DeleteAuthKeyEarKeySecret": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        },
+        "maxItems": 32,
+        "minItems": 32
+      },
+      "DeleteGroupParams": {
+        "type": "object",
+        "required": [
+          "commit",
+          "ear_key"
+        ],
+        "properties": {
+          "commit": {
+            "$ref": "#/components/schemas/MlsMessage"
+          },
+          "ear_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          }
+        }
+      },
+      "EncryptedPushToken": {
+        "type": "object",
+        "required": [
+          "ctxt"
+        ],
+        "properties": {
+          "ctxt": {
+            "$ref": "#/components/schemas/Ciphertext"
+          }
+        }
+      },
+      "EnqueueAuthKeyCtxt": {
+        "type": "object",
+        "description": "A ciphertext holding an encrypted [`EnqueueAuthenticationKey`].",
+        "required": [
+          "ctxt"
+        ],
+        "properties": {
+          "ctxt": {
+            "$ref": "#/components/schemas/Ciphertext"
+          }
+        }
+      },
+      "EnqueueAuthKeyEarKey": {
+        "type": "object",
+        "description": "EAR key for [`EnqueueAuthenticationKey`]s.",
+        "required": [
+          "key"
+        ],
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/EnqueueAuthKeyEarKeySecret"
+          }
+        }
+      },
+      "EnqueueAuthKeyEarKeySecret": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        },
+        "maxItems": 32,
+        "minItems": 32
+      },
+      "EnqueueAuthenticationKey": {
+        "type": "object",
+        "description": "A secret that is used to authenticate enqueue requests.",
+        "required": [
+          "key"
+        ],
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/EnqueueAuthenticationKeySecret"
+          }
+        }
+      },
+      "EnqueueAuthenticationKeySecret": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        },
+        "maxItems": 32,
+        "minItems": 32
+      },
+      "ExternalCommitInfoParams": {
+        "type": "object",
+        "required": [
+          "group_id",
+          "ear_key"
+        ],
+        "properties": {
+          "ear_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          },
+          "group_id": {
+            "$ref": "#/components/schemas/GroupId"
+          }
+        }
+      },
+      "Fqdn": {
+        "type": "object"
+      },
+      "GroupId": {
+        "type": "object",
+        "required": [
+          "uuid"
+        ],
+        "properties": {
+          "uuid": {
+            "type": "string"
+          }
+        }
+      },
+      "GroupInfoUpdate": {
+        "type": "object",
+        "required": [
+          "signature"
+        ],
+        "properties": {
+          "signature": {
+            "$ref": "#/components/schemas/Signature"
+          }
+        }
+      },
+      "GroupStateEarKey": {
+        "type": "object",
+        "description": "Key to encrypt/decrypt the roster of the DS group state. Roster keys can be",
+        "required": [
+          "key"
+        ],
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/GroupStateEarKeySecret"
+          }
+        }
+      },
+      "GroupStateEarKeySecret": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        },
+        "maxItems": 32,
+        "minItems": 32
+      },
+      "HpkePublicKey": {
+        "type": "object",
+        "required": [
+          "public_key"
+        ],
+        "properties": {
+          "public_key": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      },
+      "InitialClientKdfKey": {
+        "type": "object",
+        "description": "A key used to derive further key material for use by the IDS when a client",
+        "required": [
+          "key"
+        ],
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/InitialClientKdfKeySecret"
+          }
+        }
+      },
+      "InitialClientKdfKeySecret": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        },
+        "maxItems": 32,
+        "minItems": 32
+      },
+      "JoinConnectionGroupParams": {
+        "type": "object",
+        "required": [
+          "external_commit",
+          "ear_key",
+          "group_info_update"
+        ],
+        "properties": {
+          "ear_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          },
+          "external_commit": {
+            "$ref": "#/components/schemas/MlsMessage"
+          },
+          "group_info_update": {
+            "$ref": "#/components/schemas/GroupInfoUpdate"
+          }
+        }
+      },
+      "JoinGroupParams": {
+        "type": "object",
+        "required": [
+          "external_commit",
+          "ear_key",
+          "group_info_update"
+        ],
+        "properties": {
+          "ear_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          },
+          "external_commit": {
+            "$ref": "#/components/schemas/MlsMessage"
+          },
+          "group_info_update": {
+            "$ref": "#/components/schemas/GroupInfoUpdate"
+          }
+        }
+      },
+      "KeyPackage": {
+        "type": "object"
+      },
+      "KeyPackageBatch": {
+        "type": "object"
+      },
+      "LeafIndex": {
+        "type": "object"
+      },
+      "MacTag": {
+        "type": "object",
+        "required": [
+          "tag"
+        ],
+        "properties": {
+          "tag": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      },
+      "MlsMessage": {
+        "type": "object"
+      },
+      "MlsRatchetTree": {
+        "type": "object"
+      },
+      "OdsDeleteQueueParams": {
+        "type": "object",
+        "required": [
+          "queue_id",
+          "auth_token_key"
+        ],
+        "properties": {
+          "auth_token_key": {
+            "$ref": "#/components/schemas/DeleteAuthKeyEarKey"
+          },
+          "queue_id": {
+            "$ref": "#/components/schemas/QueueId"
+          }
+        }
+      },
+      "OdsDeleteQueueRequest": {
+        "type": "object",
+        "required": [
+          "payload",
+          "request_hash",
+          "mac"
+        ],
+        "properties": {
+          "mac": {
+            "$ref": "#/components/schemas/MacTag"
+          },
+          "payload": {
+            "$ref": "#/components/schemas/OdsDeleteQueueParams"
+          },
+          "request_hash": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      },
+      "OdsFanOutQueueUpdate": {
+        "type": "object",
+        "required": [
+          "ods_basic_queue_update"
+        ],
+        "properties": {
+          "encrypted_auth_key_option": {
+            "$ref": "#/components/schemas/EnqueueAuthKeyCtxt"
+          },
+          "encrypted_push_token_option": {
+            "$ref": "#/components/schemas/EncryptedPushToken"
+          },
+          "ods_basic_queue_update": {
+            "$ref": "#/components/schemas/OdsQueueUpdate"
+          }
+        }
+      },
+      "OdsFetchMessageParamsTBS": {
+        "type": "object",
+        "required": [
+          "queue_id",
+          "sequence_number_start",
+          "max_messages"
+        ],
+        "properties": {
+          "max_messages": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "queue_id": {
+            "$ref": "#/components/schemas/QueueId"
+          },
+          "sequence_number_start": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "OdsFetchMessagesParams": {
+        "type": "object",
+        "required": [
+          "payload",
+          "signature"
+        ],
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/OdsFetchMessageParamsTBS"
+          },
+          "signature": {
+            "$ref": "#/components/schemas/Signature"
+          }
+        }
+      },
+      "OdsQueueInfoUpdate": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "FanOutQueueUpdate": {
+                "$ref": "#/components/schemas/OdsFanOutQueueUpdate"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "properties": {
+              "DirectQueueUpdate": {
+                "$ref": "#/components/schemas/OdsQueueUpdate"
+              }
+            }
+          }
+        ]
+      },
+      "OdsQueueUpdate": {
+        "type": "object",
+        "properties": {
+          "owner_public_key_option": {
+            "$ref": "#/components/schemas/HpkePublicKey"
+          },
+          "owner_signature_key_option": {
+            "$ref": "#/components/schemas/SignaturePublicKey"
+          }
+        }
+      },
+      "OdsUpdateQueueInfoParams": {
+        "type": "object",
+        "required": [
+          "payload",
+          "signature"
+        ],
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/OdsUpdateQueueInfoParamsTBS"
+          },
+          "signature": {
+            "$ref": "#/components/schemas/Signature"
+          }
+        }
+      },
+      "OdsUpdateQueueInfoParamsTBS": {
+        "type": "object",
+        "required": [
+          "queue_id",
+          "info_update"
+        ],
+        "properties": {
+          "info_update": {
+            "$ref": "#/components/schemas/OdsQueueInfoUpdate"
+          },
+          "queue_id": {
+            "$ref": "#/components/schemas/QueueId"
+          }
+        }
+      },
+      "PushTokenEarKey": {
+        "type": "object",
+        "description": "EAR key for the [`PushToken`] structs.",
+        "required": [
+          "key"
+        ],
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/PushTokenEarKeySecret"
+          }
+        }
+      },
+      "PushTokenEarKeySecret": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        },
+        "maxItems": 32,
+        "minItems": 32
+      },
+      "RemoveClientsParams": {
+        "type": "object",
+        "required": [
+          "commit",
+          "ear_key",
+          "group_info_update",
+          "user_auth_key"
+        ],
+        "properties": {
+          "commit": {
+            "$ref": "#/components/schemas/MlsMessage"
+          },
+          "ear_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          },
+          "group_info_update": {
+            "$ref": "#/components/schemas/GroupInfoUpdate"
+          },
+          "user_auth_key": {
+            "$ref": "#/components/schemas/UserAuthKey"
+          }
+        }
+      },
+      "RemoveUsersParams": {
+        "type": "object",
+        "required": [
+          "commit",
+          "ear_key",
+          "group_info_update"
+        ],
+        "properties": {
+          "commit": {
+            "$ref": "#/components/schemas/MlsMessage"
+          },
+          "ear_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          },
+          "group_info_update": {
+            "$ref": "#/components/schemas/GroupInfoUpdate"
+          }
+        }
+      },
+      "ResyncClientParams": {
+        "type": "object",
+        "required": [
+          "external_commit",
+          "ear_key",
+          "group_info_update"
+        ],
+        "properties": {
+          "ear_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          },
+          "external_commit": {
+            "$ref": "#/components/schemas/MlsMessage"
+          },
+          "group_info_update": {
+            "$ref": "#/components/schemas/GroupInfoUpdate"
+          }
+        }
+      },
+      "SealedQueueConfig": {
+        "type": "object"
+      },
+      "SelfRemoveClientParams": {
+        "type": "object",
+        "required": [
+          "remove_proposals",
+          "ear_key"
+        ],
+        "properties": {
+          "ear_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          },
+          "remove_proposals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MlsMessage"
+            }
+          }
+        }
+      },
+      "SelfRemoveUserParams": {
+        "type": "object",
+        "required": [
+          "remove_proposals",
+          "ear_key"
+        ],
+        "properties": {
+          "ear_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          },
+          "remove_proposals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MlsMessage"
+            }
+          }
+        }
+      },
+      "SendMessageParams": {
+        "type": "object",
+        "required": [
+          "application_message",
+          "ear_key"
+        ],
+        "properties": {
+          "application_message": {
+            "$ref": "#/components/schemas/MlsMessage"
+          },
+          "ear_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          }
+        }
+      },
+      "Signature": {
+        "type": "object"
+      },
+      "SignaturePublicKey": {
+        "type": "object",
+        "required": [
+          "public_key"
+        ],
+        "properties": {
+          "public_key": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      },
+      "UpdateQueueInfoParams": {
+        "type": "object",
+        "required": [
+          "group_id",
+          "ear_key",
+          "new_queue_config"
+        ],
+        "properties": {
+          "ear_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          },
+          "group_id": {
+            "$ref": "#/components/schemas/GroupId"
+          },
+          "new_queue_config": {
+            "$ref": "#/components/schemas/ClientQueueConfig"
+          }
+        }
+      },
+      "UserAuthKey": {
+        "type": "object",
+        "description": "Public signature key known to all clients of a given user. This signature"
+      },
+      "Welcome": {
+        "type": "object"
+      },
+      "WelcomeAttributionInfo": {
+        "type": "object",
+        "required": [
+          "payload",
+          "signature"
+        ],
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/WelcomeAttributionInfoPayload"
+          },
+          "signature": {
+            "$ref": "#/components/schemas/Signature"
+          }
+        }
+      },
+      "WelcomeAttributionInfoPayload": {
+        "type": "object",
+        "required": [
+          "sender_client_id",
+          "group_credential_encryption_key"
+        ],
+        "properties": {
+          "group_credential_encryption_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          },
+          "sender_client_id": {
+            "$ref": "#/components/schemas/ClientId"
+          }
+        }
+      },
+      "WelcomeInfoParams": {
+        "type": "object",
+        "required": [
+          "group_id",
+          "ear_key",
+          "epoch"
+        ],
+        "properties": {
+          "ear_key": {
+            "$ref": "#/components/schemas/GroupStateEarKey"
+          },
+          "epoch": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "group_id": {
+            "$ref": "#/components/schemas/GroupId"
+          }
+        }
+      }
+    }
+  }
+}
