@@ -418,6 +418,334 @@
         },
         "deprecated": false
       }
+    },
+    "{ENDPOINT_QS_CLIENT_KEY_PACKAGE}": {
+      "get": {
+        "tags": [
+          "QS"
+        ],
+        "summary": "QS endpoint to get a client's KeyPackage",
+        "description": "QS endpoint to get a client's KeyPackage\n",
+        "operationId": "qs_client_key_package",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientKeyPackageParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Retrieved the client's KeyPackage from the QS."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_QS_CLIENT_RECORD}": {
+      "get": {
+        "tags": [
+          "QS"
+        ],
+        "summary": "QS endpoint to get client records",
+        "description": "QS endpoint to get client records\n",
+        "operationId": "qs_client_record",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRecordParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Retrieved a client record from the QS."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_QS_CREATE_CLIENT_RECORD}": {
+      "post": {
+        "tags": [
+          "QS"
+        ],
+        "summary": "QS endpoint to create client records",
+        "description": "QS endpoint to create client records\n",
+        "operationId": "qs_create_client_record",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateClientRecordParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Created a client record on the QS."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_QS_CREATE_USER_RECORD}": {
+      "post": {
+        "tags": [
+          "QS"
+        ],
+        "summary": "QS endpoint to create user records",
+        "description": "QS endpoint to create user records\n",
+        "operationId": "qs_create_user_record",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRecordParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Created a user record on the QS."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_QS_DELETE_CLIENT_RECORD}": {
+      "post": {
+        "tags": [
+          "QS"
+        ],
+        "summary": "QS endpoint to delete client records",
+        "description": "QS endpoint to delete client records\n",
+        "operationId": "qs_delete_client_record",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteClientRecordParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Deleted the client record from the QS."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_QS_DELETE_USER_RECORD}": {
+      "post": {
+        "tags": [
+          "QS"
+        ],
+        "summary": "QS endpoint to delete user records",
+        "description": "QS endpoint to delete user records\n",
+        "operationId": "qs_delete_user_record",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteUserRecordParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Deleted a user record on the QS."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_QS_DEQUEUE_MESSAGES}": {
+      "post": {
+        "tags": [
+          "QS"
+        ],
+        "summary": "QS endpoint to dequeue messages",
+        "description": "QS endpoint to dequeue messages\n",
+        "operationId": "qs_dequeue_messages",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DequeueMessagesParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Dequeued messages from the QS."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_QS_KEY_PACKAGE_BATCH}": {
+      "get": {
+        "tags": [
+          "QS"
+        ],
+        "summary": "QS endpoint to get a KeyPackageBatch",
+        "description": "QS endpoint to get a KeyPackageBatch\n",
+        "operationId": "qs_key_package_batch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KeyPackageBatchParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Retrieved a KeyPackageBatch from the QS."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_QS_PUBLISH_KEY_PACKAGES}": {
+      "post": {
+        "tags": [
+          "QS"
+        ],
+        "summary": "QS endpoint to publish KeyPackages",
+        "description": "QS endpoint to publish KeyPackages\n",
+        "operationId": "qs_publish_key_packages",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublishKeyPackagesParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Published KeyPackages on the QS."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_QS_QC_ENCRYPTION_KEY}": {
+      "get": {
+        "tags": [
+          "QS"
+        ],
+        "summary": "QS endpoint to fetch queue config encryption key",
+        "description": "QS endpoint to fetch queue config encryption key\n",
+        "operationId": "qs_qc_encryption_key",
+        "responses": {
+          "200": {
+            "description": "Retrieved QueueConfig encryption key."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_QS_UPDATE_CLIENT_RECORD}": {
+      "post": {
+        "tags": [
+          "QS"
+        ],
+        "summary": "QS endpoint to update client records",
+        "description": "QS endpoint to update client records\n",
+        "operationId": "qs_update_client_record",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateClientRecordParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Updated the client record on the QS."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_QS_UPDATE_USER_RECORD}": {
+      "post": {
+        "tags": [
+          "QS"
+        ],
+        "summary": "QS endpoint to update user records",
+        "description": "QS endpoint to update user records\n",
+        "operationId": "qs_update_user_record",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserRecordParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Updated the user record on the QS."
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "{ENDPOINT_QS_USER_RECORD}": {
+      "get": {
+        "tags": [
+          "QS"
+        ],
+        "summary": "QS endpoint to get user records",
+        "description": "QS endpoint to get user records\n",
+        "operationId": "qs_user_record",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRecordParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Retrieved a user record from the QS."
+          }
+        },
+        "deprecated": false
+      }
     }
   },
   "components": {
@@ -446,6 +774,25 @@
           },
           "welcome_attribution_info": {
             "$ref": "#/components/schemas/WelcomeAttributionInfo"
+          }
+        }
+      },
+      "AddPackage": {
+        "type": "object",
+        "required": [
+          "key_package",
+          "icc_ciphertext"
+        ],
+        "properties": {
+          "icc_ciphertext": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "key_package": {
+            "$ref": "#/components/schemas/KeyPackage"
           }
         }
       },
@@ -509,6 +856,17 @@
       "ClientId": {
         "type": "object"
       },
+      "ClientKeyPackageParams": {
+        "type": "object",
+        "required": [
+          "qs_cid"
+        ],
+        "properties": {
+          "qs_cid": {
+            "$ref": "#/components/schemas/QsCid"
+          }
+        }
+      },
       "ClientQueueConfig": {
         "type": "object",
         "required": [
@@ -521,6 +879,32 @@
           },
           "sealed_config": {
             "$ref": "#/components/schemas/SealedQueueConfig"
+          }
+        }
+      },
+      "ClientRecordParams": {
+        "type": "object",
+        "required": [
+          "qs_cid"
+        ],
+        "properties": {
+          "qs_cid": {
+            "$ref": "#/components/schemas/QsCid"
+          }
+        }
+      },
+      "CreateClientRecordParams": {
+        "type": "object",
+        "required": [
+          "client_record_auth_key",
+          "queue_encryption_key"
+        ],
+        "properties": {
+          "client_record_auth_key": {
+            "$ref": "#/components/schemas/SignaturePublicKey"
+          },
+          "queue_encryption_key": {
+            "$ref": "#/components/schemas/HpkePublicKey"
           }
         }
       },
@@ -555,6 +939,29 @@
           }
         }
       },
+      "CreateUserRecordParams": {
+        "type": "object",
+        "required": [
+          "user_record_auth_key",
+          "friendship_token",
+          "client_record_auth_key",
+          "queue_encryption_key"
+        ],
+        "properties": {
+          "client_record_auth_key": {
+            "$ref": "#/components/schemas/SignaturePublicKey"
+          },
+          "friendship_token": {
+            "$ref": "#/components/schemas/FriendshipToken"
+          },
+          "queue_encryption_key": {
+            "$ref": "#/components/schemas/HpkePublicKey"
+          },
+          "user_record_auth_key": {
+            "$ref": "#/components/schemas/SignaturePublicKey"
+          }
+        }
+      },
       "DeleteAuthKeyEarKey": {
         "type": "object",
         "description": "EAR key for the [`QueueDeletionAuthKey`].",
@@ -575,6 +982,17 @@
         "maxItems": 32,
         "minItems": 32
       },
+      "DeleteClientRecordParams": {
+        "type": "object",
+        "required": [
+          "qs_cid"
+        ],
+        "properties": {
+          "qs_cid": {
+            "$ref": "#/components/schemas/QsCid"
+          }
+        }
+      },
       "DeleteGroupParams": {
         "type": "object",
         "required": [
@@ -587,6 +1005,38 @@
           },
           "ear_key": {
             "$ref": "#/components/schemas/GroupStateEarKey"
+          }
+        }
+      },
+      "DeleteUserRecordParams": {
+        "type": "object",
+        "required": [
+          "qs_uid"
+        ],
+        "properties": {
+          "qs_uid": {
+            "$ref": "#/components/schemas/QsUid"
+          }
+        }
+      },
+      "DequeueMessagesParams": {
+        "type": "object",
+        "required": [
+          "qs_cid",
+          "sequence_number_start",
+          "max_message_number"
+        ],
+        "properties": {
+          "max_message_number": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "qs_cid": {
+            "$ref": "#/components/schemas/QsCid"
+          },
+          "sequence_number_start": {
+            "type": "integer",
+            "format": "int64"
           }
         }
       },
@@ -669,6 +1119,9 @@
         }
       },
       "Fqdn": {
+        "type": "object"
+      },
+      "FriendshipToken": {
         "type": "object"
       },
       "GroupId": {
@@ -791,6 +1244,17 @@
       },
       "KeyPackageBatch": {
         "type": "object"
+      },
+      "KeyPackageBatchParams": {
+        "type": "object",
+        "required": [
+          "qs_cid"
+        ],
+        "properties": {
+          "qs_cid": {
+            "$ref": "#/components/schemas/QsCid"
+          }
+        }
       },
       "LeafIndex": {
         "type": "object"
@@ -968,6 +1432,24 @@
           }
         }
       },
+      "PublishKeyPackagesParams": {
+        "type": "object",
+        "required": [
+          "qs_cid",
+          "add_packages"
+        ],
+        "properties": {
+          "add_packages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AddPackage"
+            }
+          },
+          "qs_cid": {
+            "$ref": "#/components/schemas/QsCid"
+          }
+        }
+      },
       "PushTokenEarKey": {
         "type": "object",
         "description": "EAR key for the [`PushToken`] structs.",
@@ -987,6 +1469,12 @@
         },
         "maxItems": 32,
         "minItems": 32
+      },
+      "QsCid": {
+        "type": "object"
+      },
+      "QsUid": {
+        "type": "object"
       },
       "RemoveClientsParams": {
         "type": "object",
@@ -1121,6 +1609,32 @@
           }
         }
       },
+      "UpdateClientRecordParams": {
+        "type": "object",
+        "required": [
+          "qs_cid",
+          "client_record_auth_key",
+          "queue_encryption_key",
+          "blocklist_entries"
+        ],
+        "properties": {
+          "blocklist_entries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GroupId"
+            }
+          },
+          "client_record_auth_key": {
+            "$ref": "#/components/schemas/SignaturePublicKey"
+          },
+          "qs_cid": {
+            "$ref": "#/components/schemas/QsCid"
+          },
+          "queue_encryption_key": {
+            "$ref": "#/components/schemas/HpkePublicKey"
+          }
+        }
+      },
       "UpdateQueueInfoParams": {
         "type": "object",
         "required": [
@@ -1140,9 +1654,39 @@
           }
         }
       },
+      "UpdateUserRecordParams": {
+        "type": "object",
+        "required": [
+          "qs_uid",
+          "user_record_auth_key",
+          "friendship_token"
+        ],
+        "properties": {
+          "friendship_token": {
+            "$ref": "#/components/schemas/FriendshipToken"
+          },
+          "qs_uid": {
+            "$ref": "#/components/schemas/QsUid"
+          },
+          "user_record_auth_key": {
+            "$ref": "#/components/schemas/SignaturePublicKey"
+          }
+        }
+      },
       "UserAuthKey": {
         "type": "object",
         "description": "Public signature key known to all clients of a given user. This signature"
+      },
+      "UserRecordParams": {
+        "type": "object",
+        "required": [
+          "qs_uid"
+        ],
+        "properties": {
+          "qs_uid": {
+            "$ref": "#/components/schemas/QsUid"
+          }
+        }
       },
       "Welcome": {
         "type": "object"
